@@ -59,3 +59,29 @@ Before merge
 ![before_merge](./img/fast_forward/fast_forward.png)
 After merge
 ![after_merge](./img/fast_forward/fast_forward_2.png)
+
+## Rebase vs Merge
+
+When we `checkout` a new branch from `main` branch, we can use `rebase` or `merge` to merge the branch back to `main` branch.
+
+![Rebase vs Merge](./img/rebase_merge/when_you_need_to_merge.png)
+
+If we use `rebase`, the commit history will be linear(can refer to how we merge `git_stash` branch to `main`). 
+
+![Rebase](./img/rebase_merge/rebase.png)
+
+If we use `merge` without `rebase`, we will add a new commit to the commit history.
+
+![Merge without rebase](./img/rebase_merge/merge_without_rebase.png)
+
+- It will find the common ancestor of the two branches
+- It will compare the changes between the common ancestor and the two branches, then create a new commit to merge the changes.
+
+## Avoiding merge conflicts
+
+- Do not have more than one person working on the same file at the same time if possible.
+- Merge `main`(or other branches your branch is based on) to your branch before you merge your branch back frequently.
+
+> **Note**:  Do not merge your branch to the `main` branch. But merge `main` branch to your branch. It will help you to find conflicts earlier and resolve them as soon as possible, then you can move on to your work.
+
+> **Note**:  Do not rebase the branch that is shared with others.
