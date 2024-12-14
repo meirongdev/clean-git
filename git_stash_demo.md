@@ -46,3 +46,28 @@ Continue the task.
 Commit the changes.
 
 ![commit the changes](./img/git_stash/commit_stash_demo.png)
+
+
+## Merge the changes of `git_stash` branch to `main` branch
+
+```bash
+git rebase main
+```
+
+We can use `git rebase main` to use the `main` branch as the base branch to merge the changes of `git_stash` branch.
+
+![merge git_stash branch to main branch](./img/git_stash/rebase_main.png)
+
+We can see there is some conflict when rebasing the changes. After resolving the conflict, we can continue the rebase.
+
+```bash
+git rebase --continue
+```
+
+Then we can switch to the `main` branch and merge the changes of `git_stash` branch to `main` branch.
+
+![merge git_stash branch to main branch](./img/git_stash/merge_git_stash_branch_to_main.png)
+
+The log of `main` branch after merging the changes of `git_stash`  will be like this:
+
+![main log after merging git_stash branch](./img/git_stash/main_log_after_merging_git_stash.png)
