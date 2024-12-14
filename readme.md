@@ -48,3 +48,14 @@ The content could be like this:
 ```
 
 Then you can use `git mergetool` to resolve conflicts.
+
+## Fast forward
+
+When we merge `git_stash` branch to `main` branch, we can see the message `Fast-forward`. 
+
+It means that the `main` branch is updated to the latest commit of `git_stash` branch.
+
+Before merge
+![before_merge](./img/fast_forward/fast_forward.png)
+After merge
+![after_merge](./img/fast_forward/fast_forward_2.png)
