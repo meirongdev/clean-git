@@ -15,3 +15,36 @@
 - Format can refer to [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 - If one line message is not enough, can use your editor to write a longer message.
   - `git config ––global core editor "code -w"`
+
+## Merge tool
+
+You can use a graphical merge tool to resolve conflicts. I prefer to use `meld`.
+
+- [meld](https://meldmerge.org/)
+- `sudo apt-get install meld`
+
+You set up meld as your default merge tool by running the following command:
+
+```bash
+git config --global merge.tool meld
+```
+
+or you can set up in your `.gitconfig` file:
+
+```bash
+git config --edit --global 
+```
+
+The content could be like this:
+
+```properties
+[user]
+	email = meirongdev@gmail.com
+	name = meirong
+[core]
+	editor = code -w
+[merge]
+	tool = meld # You can change to the path of your merge tool
+```
+
+Then you can use `git mergetool` to resolve conflicts.
